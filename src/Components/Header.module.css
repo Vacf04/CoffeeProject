@@ -1,0 +1,74 @@
+.header {
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: .3s;
+}
+
+.header .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: .5rem;
+}
+
+.header a {
+  font-size: 1rem;
+  color: #fff;
+  position: relative;
+}
+
+
+.header a::before{
+  content: '';
+  position: absolute;
+  transition: .3s;
+  width: 0%;
+  right: 0;
+  height: 0.15rem;
+  background: #fff;
+  bottom: -0.2rem;
+}
+
+
+.header a:hover::before {
+  width: 100%;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a,
+.nav button {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.headerBackground {
+  background-color: black;
+}
+
+.headerCart {
+  position: relative;
+}
+
+.headerCart p {
+  position: absolute;
+  top: -.75rem;
+  right: 2rem;
+  font-size: .875rem;
+  font-weight: bold;
+}

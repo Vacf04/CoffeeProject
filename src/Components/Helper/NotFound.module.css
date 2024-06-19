@@ -1,0 +1,15 @@
+.notFound {
+  margin-top: 7rem;
+}
+
+.notFound h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.notFound div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

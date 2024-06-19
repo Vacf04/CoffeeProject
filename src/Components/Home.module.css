@@ -1,0 +1,207 @@
+.imageSectionBg {
+  background: url('../Assets/mainPic.jpg') center center;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.imageSectionBg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: -1;
+}
+
+.imageSectionContent {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows:75% auto;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.imageSectionContent .textContent {
+  grid-row: 1;
+}
+
+.imageSectionContent h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.imageSectionContent p {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  max-width: 70ch;
+  text-align: center;
+}
+
+.shopNow {
+  grid-row: 2;
+  background: #fff;
+  padding: 1rem 3rem;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.shopNow:hover,
+.shopNow:focus {
+  color: #fff;
+  background: #000;
+  outline: none;
+}
+
+.newArrivalContent {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 3rem;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  max-width: 80ch;
+}
+
+.textContent h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.newArrivalProducts {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  margin-bottom: 3rem;
+  row-gap: 2rem;
+}
+
+.seeAll {
+  background: #000;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 1rem 3rem;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.seeAll:hover,
+.seeAll:focus {
+  color: #000;
+  background: #fff;
+  border-color: #000;
+  outline: none;
+}
+
+.regionsContent {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.regionsSelector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 1rem;
+  min-height: 80vh;
+}
+
+.regionsSelector .region:nth-child(1) {
+  grid-column: 2/2;
+  grid-row: 1/3;
+  height: 100%;
+  background: url('../Assets/centralAmerica.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  filter: grayscale(50%);
+}
+
+.region {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.region:hover {
+  transform: scale(1.01);
+}
+
+.region p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.regionsSelector .region{
+  border-radius: 2rem;
+}
+
+.regionsSelector .region:nth-child(2) {
+  background: url('../Assets/africa.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(50%);
+}
+
+
+.regionsSelector .region:nth-child(3) {
+  background: url('../Assets/southAmerica.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(50%);
+  grid-row: 1;
+}
+
+.regionsSelector .region:nth-child(4) {
+  background: url('../Assets/asiaPacific.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(50%);
+}
+
+
+.regionsSelector .region:nth-child(5) {
+  background: url('../Assets/middleEast.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(50%);
+}
+
+
+

@@ -1,0 +1,42 @@
+.products {
+  margin-top: 5rem;
+  min-height: 100vh;
+}
+
+.productsContent {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.productsContent h1 {
+  font-size: 3rem;
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 1rem;
+  grid-column: span 2;
+}
+
+.productsContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-bottom: 3rem;
+  row-gap: 2rem;
+}
+
+.regionSide h2 {
+  margin-bottom: 1rem;
+}
+
+.regionSide li {
+  margin-top: .4rem ;
+}
+
+.regionside li:hover a {
+  color: blue;
+}
+
+.regionSide :global(a.active) {
+  font-weight: bold;
+}
