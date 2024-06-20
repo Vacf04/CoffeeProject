@@ -1,3 +1,4 @@
+import Head from '../Helper/Head';
 import styles from './Login.module.css';
 
 const Login = () => {
@@ -7,6 +8,7 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
+      <Head title="Login" />
       <div className={styles.loginSide + ` showLeft`}>
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>

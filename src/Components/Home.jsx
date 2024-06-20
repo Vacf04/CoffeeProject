@@ -5,6 +5,7 @@ import ProductCard from './Products/ProductCard';
 import useFetch from '../Hooks/useFetch';
 import Loading from './Helper/Loading';
 import Error from './Helper/Error';
+import Head from './Helper/Head';
 
 const Home = () => {
   const { data, loading, error, request } = useFetch();
@@ -16,6 +17,7 @@ const Home = () => {
   return (
     <>
       <section className={styles.imageSectionBg}>
+        <Head title="Home" />
         <div className={`container ${styles.imageSectionContent} showLeft`}>
           <div className={styles.textContent}>
             <h1>Coffee Project</h1>

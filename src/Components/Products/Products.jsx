@@ -5,6 +5,7 @@ import { NavLink, useSearchParams } from 'react-router-dom';
 import useFetch from '../../Hooks/useFetch';
 import Loading from '../Helper/Loading';
 import Error from '../Helper/Error';
+import Head from '../Helper/Head';
 import useMedia from '../../Hooks/useMedia';
 import { FaFilter } from 'react-icons/fa';
 
@@ -33,6 +34,7 @@ const Products = () => {
   if (error) return <Error error={error} />;
   return (
     <section className={styles.products}>
+      <Head title="Products" />
       <div className={`container ${styles.productsContent} showLeft`}>
         <h1>Products</h1>
         {mobile && (
