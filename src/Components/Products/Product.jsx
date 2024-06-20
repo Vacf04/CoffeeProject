@@ -5,6 +5,7 @@ import useFetch from '../../Hooks/useFetch';
 import Loading from '../Helper/Loading';
 import Error from '../Helper/Error';
 import { CartContext } from '../CartContext';
+import Head from '../Helper/Head';
 
 const Product = () => {
   const { handleAddToCart } = React.useContext(CartContext);
@@ -21,6 +22,7 @@ const Product = () => {
     return (
       <>
         <section className={styles.product}>
+          <Head title={data[0].name} />
           <div className={`container ${styles.productContent} showLeft`}>
             <div className={styles.imgContainer}>
               <img src={data[0].image_url} alt={data[0].name} />

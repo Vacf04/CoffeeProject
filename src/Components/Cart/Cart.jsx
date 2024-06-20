@@ -3,6 +3,7 @@ import styles from './Cart.module.css';
 import { FaTrashAlt, FaPlus, FaMinus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext';
+import Head from '../Helper/Head';
 
 const Cart = () => {
   const { cart, handleMinusClick, handlePlusClick, removeFromCart } =
@@ -10,6 +11,7 @@ const Cart = () => {
 
   return (
     <section className={styles.cart}>
+      <Head title="Cart" />
       <div className={`container ${styles.cartContent} showLeft`}>
         <h1>Your Cart</h1>
         {cart.length === 0 ? (
