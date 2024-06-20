@@ -6,11 +6,15 @@ import useFetch from '../../Hooks/useFetch';
 import Loading from '../Helper/Loading';
 import Error from '../Helper/Error';
 import Head from '../Helper/Head';
+import useMedia from '../../Hooks/useMedia';
+import { FaFilter } from 'react-icons/fa';
 
 const Products = () => {
   const { data, loading, error, request } = useFetch();
   const [filteredProducts, setFilteredProducts] = React.useState(null);
   const [searchParams] = useSearchParams();
+  const [filterMenu, setFilterMenu] = React.useState(false);
+  const mobile = useMedia('(max-width: 768px)');
 
   React.useEffect(() => {
     request(`https://fake-coffee-api.vercel.app/api`);
@@ -33,8 +37,29 @@ const Products = () => {
       <Head title="Products" />
       <div className={`container ${styles.productsContent} showLeft`}>
         <h1>Products</h1>
-        <aside className={styles.regionSide}>
-          <h2>Regions</h2>
+        {mobile && (
+          <span
+            className={styles.filterContainer}
+            onClick={() => setFilterMenu(!filterMenu)}
+          >
+            <FaFilter className={styles.filterIcon} />
+            Regions
+          </span>
+        )}
+        <aside
+          className={
+            styles.regionSide + ` ${filterMenu && styles.regionSideActive}`
+          }
+        >
+          {filterMenu && (
+            <button
+              className={styles.closeFilterMenu}
+              onClick={() => setFilterMenu(!filterMenu)}
+            >
+              X
+            </button>
+          )}
+          <h2>Filter By Regions</h2>
           <nav>
             <ul>
               <li>
@@ -46,6 +71,7 @@ const Products = () => {
                       ? 'active'
                       : ''
                   }
+                  onClick={() => setFilterMenu(false)}
                 >
                   All
                 </NavLink>
@@ -58,6 +84,7 @@ const Products = () => {
                       ? 'active'
                       : ''
                   }
+                  onClick={() => setFilterMenu(false)}
                 >
                   Central America
                 </NavLink>
@@ -70,6 +97,7 @@ const Products = () => {
                       ? 'active'
                       : ''
                   }
+                  onClick={() => setFilterMenu(false)}
                 >
                   Africa
                 </NavLink>
@@ -82,6 +110,7 @@ const Products = () => {
                       ? 'active'
                       : ''
                   }
+                  onClick={() => setFilterMenu(false)}
                 >
                   South America
                 </NavLink>
@@ -94,6 +123,7 @@ const Products = () => {
                       ? 'active'
                       : ''
                   }
+                  onClick={() => setFilterMenu(false)}
                 >
                   Asia Pacific
                 </NavLink>
@@ -106,6 +136,7 @@ const Products = () => {
                       ? 'active'
                       : ''
                   }
+                  onClick={() => setFilterMenu(false)}
                 >
                   Middle East
                 </NavLink>
