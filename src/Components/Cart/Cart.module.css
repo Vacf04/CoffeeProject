@@ -1,5 +1,6 @@
 .cart {
   margin-top: 5rem;
+  min-height: 80vh;
 }
 
 .cartContent {
@@ -35,7 +36,7 @@
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
   justify-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .removeFromCart,
@@ -52,11 +53,11 @@
   font-size: 1.5rem;
   border: 1px solid #000;
   border-radius: .4rem;
-  padding: 1rem;
+  padding: .5rem 1rem;
 }
 
 .quantText {
-  width: 5rem;
+  width: 3.5rem;
   text-align: center;
 }
 
@@ -128,4 +129,59 @@
 
 .cartEmpty a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .cartContent {
+    grid-template-columns: 1fr;
+  }
+
+  .cart h1 {
+    grid-column: 1;
+  }
+
+  .resume {
+    margin-top: -1.5rem;
+  }
+
+}
+
+@media (max-width: 950px) {
+  .cartProductsDates {
+    display: none;
+  }
+
+  .product {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .productDates p {
+    text-align: center;
+    order: 1;
+  }
+
+  .productDates img {
+    display: block;
+    text-align: center;
+    order: 2;
+  }
+
+  .productDates {
+    grid-row:1;
+    grid-column: 1;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .removeFromCart {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: start;
+  }
+
+  .productSubtotal {
+    display: none;
+  }
+
 }

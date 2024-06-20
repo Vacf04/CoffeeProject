@@ -87,3 +87,15 @@
   outline: none;
 }
 
+@media (max-width: 640px) {
+  .login::before {
+    display: none;
+  }
+
+  .loginSide {
+    max-width: none;
+    width: 100vw;
+    padding: 2rem;
+  }
+}
+

@@ -9,6 +9,7 @@ import Products from './Components/Products/Products';
 import Login from './Components/Login/Login';
 import NotFound from './Components/Helper/NotFound';
 import { CartProvider } from './Components/CartContext';
+import ScrollToTop from './Components/Helper/ScrollToTop';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
         <CartProvider>
           <Header />
+          <ScrollToTop />
           <main className="AppBody">
             <Routes>
               <Route path="/" element={<Home />} />
