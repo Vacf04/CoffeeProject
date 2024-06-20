@@ -4,21 +4,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaShoppingCart, FaRegUserCircle } from 'react-icons/fa';
 import { CiCoffeeCup } from 'react-icons/ci';
 import { CartContext } from './CartContext';
+import useMedia from '../Hooks/useMedia';
 
 const Header = () => {
   const location = useLocation();
   const [backgroundHeader, setBackgroundHeader] = React.useState(true);
   const { cartQuant } = React.useContext(CartContext);
+  const mobile = useMedia('(max-width: 768px)');
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setBackgroundHeader(window.scrollY > window.innerHeight * 0.7);
+      setBackgroundHeader(window.scrollY > 1);
     };
 
     if (location.pathname != '/') setBackgroundHeader(true);
 
     if (location.pathname === '/') {
-      setBackgroundHeader(false);
+      handleScroll();
       window.addEventListener('scroll', handleScroll);
       return () => {
         window.removeEventListener('scroll', handleScroll);
@@ -39,22 +41,22 @@ const Header = () => {
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link to="/products">
-                <CiCoffeeCup />
-                Products
-              </Link>
-            </li>
-            <li>
               <Link to="/cart" className={styles.headerCart}>
                 <FaShoppingCart className={styles.icon} />
                 <p>{cartQuant > 0 ? cartQuant : ''}</p>
-                Cart
+                {!mobile && 'Cart'}
+              </Link>
+            </li>
+            <li>
+              <Link to="/products">
+                <CiCoffeeCup className={styles.icon} />
+                {!mobile && 'Products'}
               </Link>
             </li>
             <li>
               <Link to="/login">
                 <FaRegUserCircle className={styles.icon} />
-                Login
+                {!mobile && 'Login'}
               </Link>
             </li>
           </ul>

@@ -55,3 +55,18 @@ a {
     transform: initial;
   }
 }
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+
+}
+
+@media (max-width: 300px) {
+  html {
+    font-size: 80%;
+  }
+
+}

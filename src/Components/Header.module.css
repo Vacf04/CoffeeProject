@@ -72,3 +72,31 @@
   font-size: .875rem;
   font-weight: bold;
 }
+
+
+@media (max-width: 768px) {
+  .header a:hover::before {
+    width: 0;
+  }
+
+  .headerCart p {
+    top: -.75rem;
+    right: -.5rem;
+    font-size: .875rem;
+    font-weight: bold;
+  }
+
+  .nav ul {
+    gap: 2rem;
+  }
+
+  .nav ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+}

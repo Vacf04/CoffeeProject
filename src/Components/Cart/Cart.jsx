@@ -48,7 +48,9 @@ const Cart = () => {
                     </button>
                   </div>
                   <p>${product.price}</p>
-                  <p>${(product.price * product.quant).toFixed(2)}</p>
+                  <p className={styles.productSubtotal}>
+                    ${(product.price * product.quant).toFixed(2)}
+                  </p>
                   <button
                     onClick={() => removeFromCart(product.id)}
                     className={styles.removeFromCart}

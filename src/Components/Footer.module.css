@@ -77,4 +77,26 @@
   margin-top: 1rem;
 }
 
+@media (max-width: 800px) {
+  .footerContent {
+    padding: 3rem 0 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    justify-content: start;
+    row-gap: 4rem;
+    text-align: center;
+  }
+
+  .logoAndResume  {
+    grid-column: 1;
+  }
+
+  .copy {
+    grid-row: 6;
+    grid-column: 1;
+    font-weight: bold;
+  }
+}
+
 
